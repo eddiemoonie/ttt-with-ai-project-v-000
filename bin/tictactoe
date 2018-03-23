@@ -13,10 +13,8 @@ until new_game == "no"
   puts "Would you like to start a new game?"
   new_game = gets.strip
   new_game == "yes"
-    tic_tac_toe = game.new
-    until game.won?
-      game.play
-    end
+  tic_tac_toe = game.new
+  until game.won?
+    game.play
+  end
 end
-
-  
