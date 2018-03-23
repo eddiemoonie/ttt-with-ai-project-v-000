@@ -27,23 +27,6 @@ WIN_COMBINATIONS = [
     end
   end
 
-  def won?
-    WIN_COMBINATIONS.find do |combo|
-      @board.cells[combo[0]] == @board.cells[combo[1]] &&
-      @board.cells[combo[1]] == @board.cells[combo[2]] &&
-      @board.taken?(combo[0]+1)
-      #@board.cells[combo[0]] == "X" || @board.cells[combo[0]] == "O"
-    end
-  end
-
-  def draw?
-    @board.full? && !won?
-  end
-
-  def over?
-    won? || draw?
-  end
-
   def winner
     if winning_combo = won?
       @winner = @board.cells[winning_combo.first]
@@ -73,6 +56,23 @@ WIN_COMBINATIONS = [
       puts "Congratulations #{winner}!"
     elsif draw?
       puts "Cat's Game!"
+    end
+  end
+
+  def draw?
+    @board.full? && !won?
+  end
+
+  def over?
+    won? || draw?
+  end
+
+  def won?
+    WIN_COMBINATIONS.find do |combo|
+      @board.cells[combo[0]] == @board.cells[combo[1]] &&
+      @board.cells[combo[1]] == @board.cells[combo[2]] &&
+      @board.taken?(combo[0]+1)
+      #@board.cells[combo[0]] == "X" || @board.cells[combo[0]] == "O"
     end
   end
 
