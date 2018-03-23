@@ -10,7 +10,7 @@ end
 
 new_game = ""
 until new_game == "no"
-  puts "Would you like to start a new game?"
+  puts "Would you like to start a new game? (yes/no)"
   new_game = gets.strip
   new_game == "yes"
   tic_tac_toe = Game.new
