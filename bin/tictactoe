@@ -18,5 +18,3 @@ until new_game == "no"
     game.play
   end
 end
-
-  
