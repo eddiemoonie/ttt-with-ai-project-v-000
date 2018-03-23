@@ -4,8 +4,8 @@ require_relative '../config/environment'
 
 puts "Welcome to Tic Tac Toe"
 tic_tac_toe = Game.new
-until game.won?
-  game.play
+until tic_tac_toe.won?
+  tic_tac_toe.play
 end
 
 new_game = ""
@@ -14,7 +14,7 @@ until new_game == "no"
   new_game = gets.strip
   new_game == "yes"
   tic_tac_toe = Game.new
-  until game.won?
-    game.play
+  until tic_tac_toe.won?
+    tic_tac_toe.play
   end
 end
